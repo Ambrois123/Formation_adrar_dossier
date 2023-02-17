@@ -1,0 +1,13 @@
+SELECT ename, comm
+FROM emp 
+WHERE 
+	comm IS NOT NULL AND ename NOT LIKE ('_A%N');
+	
+	Peut aussi s'écrire
+	
+SELECT ename, comm
+FROM emp 
+WHERE 
+	comm IS NOT NULL 
+	AND ename NOT LIKE ('_A%')
+	AND ename NOT LIKE ('%N');

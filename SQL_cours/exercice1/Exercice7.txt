@@ -1,0 +1,4 @@
+SELECT ename, sal
+FROM emp 
+WHERE sal
+BETWEEN 1100 AND 3000;

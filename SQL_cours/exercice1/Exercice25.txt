@@ -1,0 +1,9 @@
+SELECT ename,
+CASE
+	WHEN comm IS NULL THEN 'Non commissionné'
+    WHEN comm = (SELECT min(comm) from emp) THEN 'Très mauvais vendeur'
+  	  WHEN comm BETWEEN 299 and 501 THEN 'Bon vendeur'
+      WHEN comm > 1000 THEN 'Très bon vendeur'
+    ELSE comm
+END as comm
+FROM emp 

@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccueilController!{% endblock %}
+
+{% block body %}
+<style>
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        padding: 1rem;
+        box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.75);
+    }
+    .nav_item {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .nav_link{
+        padding-right: 3rem;
+    }
+</style>
+
+<div class="example-wrapper">
+    <header>
+        <h1>LE RESTAURANT</h1>
+        <nav>
+            <ul class="nav_item">
+
+            <li class="nav_link">Accueil</li>
+            <li class="nav_link">La carte</li>
+            <li class="nav_link">Nos menus</li>
+            <li class="nav_link">Devenir client</li>
+            <li class="nav_link">Connexion</li>
+
+                {# <li><a href="{{ path('accueil') }}">Accueil</a></li>
+                <li><a href="{{ path('menu') }}">Nos menus</a></li>
+                <li><a href="{{ path('contact') }}">Nos formules</a></li>
+                <li><a href="{{ path('contact') }}">Réserver</a></li>
+                <li><a href="{{ path('contact') }}">Connexion</a></li>
+                <li><a href="{{ path('contact') }}">Devenir client</a></li> #}
+                
+            </ul>
+    </header>
+</div>
+{% endblock %}

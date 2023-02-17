@@ -1,0 +1,57 @@
+$username = $_POST['username'];
+            $email = $_POST['email'];
+            $userId = "SELECT user_id FROM users WHERE user_email = ".$email."";
+            $phone = $_POST['phone'];
+            $couvert = $_POST['couvert'];
+            $date = $_POST['date'];
+            $reservationId = "SELECT reservation_id FROM reservation";
+            $allergies = $_POST['allergies'];
+            $reservationId;
+            
+
+            $reqUsers ="
+                INSERT INTO users (user_name, user_email, user_phone)VALUES (:username, :email, :phone);
+                
+            ";
+            $reqReservation ="
+                INSERT INTO reservation (reservation_datetime, numberOfPeople, userId) VALUES (:date, :couvert, :userId);
+            ";
+            $reqAllergies ="
+                INSERT INTO allergies (allergies_list, reservationId)
+                VALUES (:allergies, :reservationId);
+            ";
+
+            $stmtUsers = $db->prepare($reqUsers);
+            $stmtUsers->bindParam(":username", $username, PDO::PARAM_STR);
+            $stmtUsers->bindParam(":email", $email, PDO::PARAM_STR);
+            $stmtUsers->bindParam(":phone", $phone, PDO::PARAM_INT);
+            
+
+            $stmtReservations = $db->prepare($reqReservation);
+            $stmtReservations->bindParam(":date", $date, PDO::PARAM_STR);
+            $stmtReservations->bindParam(":couvert", $couvert, PDO::PARAM_INT);
+            $stmtReservations->bindParam(":userId", $userId, PDO::PARAM_INT);
+            
+            $stmtAllergies = $db->prepare($reqAllergies);
+            $stmtAllergies->bindParam(":allergies", $allergies, PDO::PARAM_STR);
+            $stmtAllergies->bindParam(":reservationId", $reservationId, PDO::PARAM_INT);
+            
+            
+            
+
+            
+
+            if($stmtUsers->execute()  && $stmtReservations->execute() && $stmtAllergies->execute()){
+                echo "Votre réservation a bien été prise en compte";
+                
+
+            }else{
+                echo "Votre réservation n'a pas pu être enregistrer";
+            }
+
+            
+
+        }
+
+        
+    }

@@ -1,0 +1,9 @@
+SELECT d.deptno, d.dname, e.empno, e.ename
+FROM emp as e
+RIGHT JOIN dept as d ON d.deptno = e.deptno
+
+Avec left join :
+
+SELECT d.deptno, d.dname, e.empno, e.ename
+FROM dept as d
+LEFT JOIN emp as e  ON d.deptno = e.deptno

@@ -1,0 +1,11 @@
+SELECT ename, dname
+FROM emp as e, dept as d
+WHERE e.deptno = d.deptno;
+
+SELECT ename, dname
+FROM emp as e
+INNER JOIN dept as d ON e.deptno = d.deptno;
+
+SELECT ename, dname
+FROM emp as e
+NATURAL JOIN dept;

@@ -1,0 +1,3 @@
+SELECT ename, job
+FROM emp 
+WHERE job IN ("CLERK", "MANAGER");

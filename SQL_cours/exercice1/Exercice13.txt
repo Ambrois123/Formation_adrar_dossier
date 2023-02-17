@@ -1,0 +1,10 @@
+SELECT e.ename as employe , m.ename as manager
+FROM emp as e, emp as m
+WHERE e.mgr = m.empno
+
+
+SELECT e.ename as employe, m.ename as manager
+FROM emp as e
+INNER JOIN emp as m ON e.mgr = m.empno
+
+

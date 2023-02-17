@@ -1,0 +1,29 @@
+1- INSERT INTO emp(empno, ename)
+VALUES(1234,  'Ambroise')
+
+2- UPDATE emp
+SET sal = sal*1.05 
+WHERE job = 'SALESMAN'
+
+UPDATE emp
+SET sal = sal*0.90 
+WHERE job = 'CLERK'
+
+3- UPDATE emp
+SET ename = NULL
+WHERE ename = 'Ambroise'
+
+4- Correction:
+#Supprimer le département dont le num est le plus élevé.
+
+DELETE from dept where deptno IN
+(select MAX(deptno) 
+from dept as d 
+where d.deptno not in (select distinct deptno from emp where deptno is not null))
+
+#Supprimer tous les emploés qui ne sont pas rattachés à un département.
+
+DELETE from dept where deptno =
+(select MAX(deptno) 
+from dept as d 
+where d.deptno not in (select distinct deptno from emp where deptno is not null))

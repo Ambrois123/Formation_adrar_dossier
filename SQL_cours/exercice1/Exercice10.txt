@@ -1,0 +1,3 @@
+SELECT ename, comm
+FROM emp 
+WHERE comm IS NOT NULL AND ename like '%N';

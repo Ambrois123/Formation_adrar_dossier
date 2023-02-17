@@ -1,0 +1,3 @@
+SELECT job, ROUND(AVG(sal),1)
+from emp as e
+GROUP BY job

@@ -1,0 +1,9 @@
+ALTER TABLE emp
+ADD CONSTRAINT emp_fk_deptno
+FOREIGN KEY (deptno)
+REFERENCES dept (deptno);
+
+ALTER TABLE emp
+ADD CONSTRAINT emp_fk_mgr
+FOREIGN KEY (mgr)
+REFERENCES emp (empno)

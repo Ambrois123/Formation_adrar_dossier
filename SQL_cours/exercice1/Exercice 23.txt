@@ -1,0 +1,4 @@
+SELECT dname, COUNT(e.ename) as 'NB employés' 
+From emp as e
+RIGHT JOIN dept as d ON e.deptno = d.deptno
+GROUP BY d.dname

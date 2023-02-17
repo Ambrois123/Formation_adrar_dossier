@@ -1,0 +1,3 @@
+SELECT ename, hiredate
+FROM emp 
+WHERE hiredate > '1981-12-31' ;
